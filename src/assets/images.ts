@@ -1,0 +1,35 @@
+// Do not edit manually
+
+export const IMAGES = {
+  CAPTURA_DE_PANTALLA_2026_02_07_A_LAS_12_08_55_A_M_28: "/images/Captura de pantalla 2026-02-07 a las 12.08.55 a. m..png",
+  CAPTURA_DE_PANTALLA_2026_02_07_A_LAS_12_08_55_A_M_29: "/images/Captura de pantalla 2026-02-07 a las 12.08.55 a. m..png",
+  DATA_DASHBOARD_1: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU2OTd8MHwxfHNlYXJjaHw2fHxkYXRhJTIwdmlzdWFsaXphdGlvbiUyMGRhc2hib2FyZHxlbnwwfDB8fHwxNzcwNDQ0NjA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  DATA_DASHBOARD_2: "https://images.unsplash.com/photo-1686061592689-312bbfb5c055?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU2OTd8MHwxfHNlYXJjaHw3fHxkYXRhJTIwdmlzdWFsaXphdGlvbiUyMGRhc2hib2FyZHxlbnwwfDB8fHwxNzcwNDQ0NjA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  DATA_DASHBOARD_3: "https://images.unsplash.com/photo-1664526937033-fe2c11f1be25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU2OTd8MHwxfHNlYXJjaHw4fHxkYXRhJTIwdmlzdWFsaXphdGlvbiUyMGRhc2hib2FyZHxlbnwwfDB8fHwxNzcwNDQ0NjA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  DATA_DASHBOARD_4: "https://images.unsplash.com/photo-1758876202980-0a28b744fb24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU2OTd8MHwxfHNlYXJjaHwyfHxkYXRhJTIwdmlzdWFsaXphdGlvbiUyMGRhc2hib2FyZHxlbnwwfDB8fHwxNzcwNDQ0NjA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  DATA_DASHBOARD_5: "https://images.unsplash.com/photo-1763038311036-6d18805537e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU2OTd8MHwxfHNlYXJjaHwzfHxkYXRhJTIwdmlzdWFsaXphdGlvbiUyMGRhc2hib2FyZHxlbnwwfDB8fHwxNzcwNDQ0NjA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  DATA_DASHBOARD_6: "https://images.unsplash.com/photo-1759661966728-4a02e3c6ed91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU2OTd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwdmlzdWFsaXphdGlvbiUyMGRhc2hib2FyZHxlbnwwfDB8fHwxNzcwNDQ0NjA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  DATA_DASHBOARD_7: "https://images.unsplash.com/photo-1763718528755-4bca23f82ac3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU2OTd8MHwxfHNlYXJjaHw0fHxkYXRhJTIwdmlzdWFsaXphdGlvbiUyMGRhc2hib2FyZHxlbnwwfDB8fHwxNzcwNDQ0NjA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  DATA_DASHBOARD_8: "https://images.unsplash.com/photo-1761850167081-473019536383?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU2OTd8MHwxfHNlYXJjaHw1fHxkYXRhJTIwdmlzdWFsaXphdGlvbiUyMGRhc2hib2FyZHxlbnwwfDB8fHwxNzcwNDQ0NjA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  DATA_MIGRATION_ICON_20260207_061030_25: "/images/data_migration_icon_20260207_061030.png",
+  MABLO_MASCOT_HERO_20260207_061031_23: "/images/mablo_mascot_hero_20260207_061031.png",
+  OFFICE_MODERN_1: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU5NTF8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMG9mZmljZXxlbnwwfDB8fHwxNzcwNDQ0NjA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  OFFICE_MODERN_2: "https://images.unsplash.com/photo-1680479611243-a072462e4d6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU5NTF8MHwxfHNlYXJjaHw3fHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMG9mZmljZXxlbnwwfDB8fHwxNzcwNDQ0NjA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  OFFICE_MODERN_3: "https://images.unsplash.com/photo-1758598306835-2c030e203707?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU5NTF8MHwxfHNlYXJjaHw1fHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMG9mZmljZXxlbnwwfDB8fHwxNzcwNDQ0NjA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  OFFICE_MODERN_4: "https://images.unsplash.com/photo-1758873268180-d95d10c86588?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU5NTF8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMG9mZmljZXxlbnwwfDB8fHwxNzcwNDQ0NjA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  OFFICE_MODERN_5: "https://images.unsplash.com/photo-1758873271902-a63ecd5b5235?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU5NTF8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMG9mZmljZXxlbnwwfDB8fHwxNzcwNDQ0NjA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  OFFICE_MODERN_6: "https://images.unsplash.com/photo-1758873268877-3cd8ed329ed8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU5NTF8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMG9mZmljZXxlbnwwfDB8fHwxNzcwNDQ0NjA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  OFFICE_MODERN_7: "https://images.unsplash.com/photo-1759884247173-3db27f7fafef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU5NTF8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMG9mZmljZXxlbnwwfDB8fHwxNzcwNDQ0NjA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  OFFICE_MODERN_8: "https://images.unsplash.com/photo-1758874572744-26aa02a8f5c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDU5NTF8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMG9mZmljZXxlbnwwfDB8fHwxNzcwNDQ0NjA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  OPTIMIZATION_ICON_20260207_061029_26: "/images/optimization_icon_20260207_061029.png",
+  TEAM_AVATARS_20260207_061030_27: "/images/team_avatars_20260207_061030.png",
+  TEAM_WORKSPACE_1: "https://images.unsplash.com/photo-1621858436649-25dedba0eb38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4Mzc5NTV8MHwxfHNlYXJjaHw1fHxmcmllbmRseSUyMGRpZ2l0YWwlMjBhZ2VuY3klMjB0ZWFtJTIwd29ya3NwYWNlfGVufDB8MHx8fDE3NzA0NDQ2MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  TEAM_WORKSPACE_2: "https://images.unsplash.com/photo-1621856625680-282ec3a17db8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4Mzc5NTV8MHwxfHNlYXJjaHwxfHxmcmllbmRseSUyMGRpZ2l0YWwlMjBhZ2VuY3klMjB0ZWFtJTIwd29ya3NwYWNlfGVufDB8MHx8fDE3NzA0NDQ2MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  TEAM_WORKSPACE_3: "https://images.unsplash.com/photo-1621857768404-fc6a3babee48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4Mzc5NTV8MHwxfHNlYXJjaHw2fHxmcmllbmRseSUyMGRpZ2l0YWwlMjBhZ2VuY3klMjB0ZWFtJTIwd29ya3NwYWNlfGVufDB8MHx8fDE3NzA0NDQ2MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  TEAM_WORKSPACE_4: "https://images.unsplash.com/photo-1621857093087-7daa85ab14a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4Mzc5NTV8MHwxfHNlYXJjaHw0fHxmcmllbmRseSUyMGRpZ2l0YWwlMjBhZ2VuY3klMjB0ZWFtJTIwd29ya3NwYWNlfGVufDB8MHx8fDE3NzA0NDQ2MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  TEAM_WORKSPACE_5: "https://images.unsplash.com/photo-1681164315393-8d2850f570fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4Mzc5NTV8MHwxfHNlYXJjaHwyfHxmcmllbmRseSUyMGRpZ2l0YWwlMjBhZ2VuY3klMjB0ZWFtJTIwd29ya3NwYWNlfGVufDB8MHx8fDE3NzA0NDQ2MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  TEAM_WORKSPACE_6: "https://images.unsplash.com/photo-1681164316667-0541ea50f563?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4Mzc5NTV8MHwxfHNlYXJjaHwzfHxmcmllbmRseSUyMGRpZ2l0YWwlMjBhZ2VuY3klMjB0ZWFtJTIwd29ya3NwYWNlfGVufDB8MHx8fDE3NzA0NDQ2MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  WEB_DEVELOPMENT_ICON_20260207_061031_24: "/images/web_development_icon_20260207_061031.png",
+} as const;
+
+export type ImageKey = keyof typeof IMAGES;
