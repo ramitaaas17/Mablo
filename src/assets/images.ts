@@ -30,6 +30,21 @@ export const IMAGES = {
   TEAM_WORKSPACE_5: "https://images.unsplash.com/photo-1681164315393-8d2850f570fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4Mzc5NTV8MHwxfHNlYXJjaHwyfHxmcmllbmRseSUyMGRpZ2l0YWwlMjBhZ2VuY3klMjB0ZWFtJTIwd29ya3NwYWNlfGVufDB8MHx8fDE3NzA0NDQ2MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
   TEAM_WORKSPACE_6: "https://images.unsplash.com/photo-1681164316667-0541ea50f563?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4Mzc5NTV8MHwxfHNlYXJjaHwzfHxmcmllbmRseSUyMGRpZ2l0YWwlMjBhZ2VuY3klMjB0ZWFtJTIwd29ya3NwYWNlfGVufDB8MHx8fDE3NzA0NDQ2MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
   WEB_DEVELOPMENT_ICON_20260207_061031_24: "/images/web_development_icon_20260207_061031.png",
+
+  /* visualesMablo - Elementos visuales de Mablo */
+  VISUALES_MABLO_AJUSTES: "/images/visualesMablo/ajustes.png",
+  VISUALES_MABLO_ANALISIS: "/images/visualesMablo/analisis.png",
+  VISUALES_MABLO_CALENDARIO: "/images/visualesMablo/calendario.png",
+  VISUALES_MABLO_DATA_BASE: "/images/visualesMablo/dataBase.png",
+  VISUALES_MABLO_IDEA: "/images/visualesMablo/idea.png",
+  VISUALES_MABLO_MABLO_SALUDO: "/images/visualesMablo/mabloSaludo.png",
+  VISUALES_MABLO_MABLO_WORK: "/images/visualesMablo/mabloWork.png",
+  VISUALES_MABLO_MENSAJE: "/images/visualesMablo/mensjae.png",
+  VISUALES_MABLO_REGALO: "/images/visualesMablo/regalo.png",
+  VISUALES_MABLO_SEGURIDAD: "/images/visualesMablo/seguridad.png",
+  VISUALES_MABLO_SOCIAL: "/images/visualesMablo/social.png",
+  VISUALES_MABLO_UPLOAD: "/images/visualesMablo/upload.png",
+  VISUALES_MABLO_WEB_DESIGN: "/images/visualesMablo/webDesign.png",
 } as const;
 
 export type ImageKey = keyof typeof IMAGES;

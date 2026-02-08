@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -7,21 +7,19 @@ import {
   Mail, 
   Send, 
   CheckCircle, 
-  Code, 
-  Database, 
-  Cpu, 
   ArrowRight, 
   Linkedin,
   Github,
-  ExternalLink
 } from 'lucide-react';
 import { 
   TEAM_DATA, 
   scrollToSection, 
   ROUTE_PATHS 
 } from '@/lib/index';
-import { MabloMascot } from '@/components/MabloMascot';
 import { ServiceCards } from '@/components/ServiceCards';
+import { MabloMascot } from '@/components/MabloMascot';
+import { Typewriter } from '@/components/Typewriter';
+import { ScrollVisualElements } from '@/components/ScrollVisualElements';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -43,11 +41,6 @@ const springTransition = {
 };
 
 export default function Home() {
-  const { scrollYProgress } = useScroll();
-  
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [0, 0.5, 1]);
-  const heroX = useTransform(scrollYProgress, [0, 0.2], [-50, 0]);
-
   const { 
     register, 
     handleSubmit, 
@@ -63,100 +56,102 @@ export default function Home() {
 
   return (
     <div className="relative">
-      {/* Mascota Interactiva - Controlada por Scroll */}
-      <MabloMascot />
-
-      {/* Hero Section */}
+      {/* Hero Section - compacto y proporcionado como en el diseño */}
       <section 
         id="hero" 
-        className="relative min-h-screen flex items-center bg-[#FAFAFA] overflow-hidden"
+        className="relative flex items-center justify-center overflow-hidden pt-24 pb-16 md:pt-28 md:pb-20"
+        style={{ backgroundColor: '#ffffff', minHeight: 'min(72vh, 680px)' }}
       >
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div 
-            style={{ opacity: heroOpacity, x: heroX }}
-            className="max-w-2xl"
+        <ScrollVisualElements />
+        
+        <div className="container mx-auto px-6 flex flex-col items-center justify-center text-center relative z-10 max-w-4xl">
+          <motion.h1 
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...springTransition, delay: 0.1 }}
+            className="text-4xl md:text-5xl font-extrabold text-[#2C3E50] leading-tight mb-2"
           >
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ ...springTransition, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-extrabold text-[#2C3E50] leading-tight mb-6"
-            >
-              Tu negocio, <br />
-              <span className="text-primary">organizado</span> y en línea.
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ ...springTransition, delay: 0.3 }}
-              className="text-xl text-muted-foreground mb-10 leading-relaxed"
-            >
-              Dejamos atrás tus Excel y creamos tu nueva web. Soluciones digitales diseñadas por ingenieros para empresas reales que buscan crecer sin fricción.
-            </motion.p>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ ...springTransition, delay: 0.4 }}
-              className="flex flex-wrap gap-4"
-            >
-              <Button 
-                size="lg" 
-                className="rounded-full px-8 bg-primary hover:bg-primary/90 text-white text-lg"
-                onClick={() => scrollToSection(ROUTE_PATHS.CONTACT)}
-              >
-                Empezar ahora
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="rounded-full px-8 border-secondary text-secondary hover:bg-secondary/5 text-lg"
-                onClick={() => scrollToSection(ROUTE_PATHS.SERVICES)}
-              >
-                Ver servicios
-              </Button>
-            </motion.div>
-          </motion.div>
+            Mablo
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...springTransition, delay: 0.25 }}
+            className="text-xl md:text-2xl font-semibold text-[#2C3E50] mb-6"
+          >
+            Tu negocio, <span className="text-primary"><Typewriter text="organizado" speed={80} delay={400} /></span> y en línea.
+          </motion.p>
           
-          {/* Space for Mablo (MabloMascot handles its own positioning via fixed/absolute) */}
-          <div className="hidden lg:block h-[500px]" />
+          <div className="relative w-full flex items-center justify-center py-2">
+            <MabloMascot />
+          </div>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...springTransition, delay: 0.5 }}
+            className="flex flex-wrap gap-3 justify-center mt-4"
+          >
+            <Button 
+              size="lg" 
+              className="rounded-full px-6 text-base font-medium"
+              style={{ backgroundColor: '#8B7BB8', color: '#fff' }}
+              onClick={() => scrollToSection(ROUTE_PATHS.CONTACT)}
+            >
+              Contactar
+              <ArrowRight className="ml-1.5 w-4 h-4" />
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="rounded-full px-6 text-base border-[#8B7BB8] text-[#8B7BB8] hover:bg-[#8B7BB8]/10 font-medium"
+              onClick={() => scrollToSection(ROUTE_PATHS.SERVICES)}
+            >
+              Ver servicios
+            </Button>
+          </motion.div>
         </div>
-
-        {/* Decorative elements */}
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-24 bg-white">
+      {/* Servicios - solo título centrado como en la referencia */}
+      <section id="services" className="py-24 relative overflow-hidden" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <motion.span 
-              initial={{ opacity: 0 }} 
-              whileInView={{ opacity: 1 }}
-              className="text-primary font-bold tracking-wider uppercase text-sm"
-            >
-              Nuestra Experiencia
-            </motion.span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-[#2C3E50]">
-              Ingeniería aplicada a tu crecimiento
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              No solo hacemos webs; optimizamos la columna vertebral de tu operación digital.
-            </p>
-          </div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center text-[#2C3E50] mb-16"
+          >
+            Servicios
+          </motion.h2>
 
           <ServiceCards />
         </div>
       </section>
 
+      {/* Proyectos - título como en la referencia */}
+      <section id="proyectos" className="py-16 relative" style={{ backgroundColor: '#ffffff' }}>
+        <div className="container mx-auto px-4">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center text-[#2C3E50]"
+          >
+            Proyectos
+          </motion.h2>
+        </div>
+      </section>
+
       {/* About Section - The 4 Engineers */}
-      <section id="about" className="py-24 bg-[#FAFAFA]">
+      <section id="about" className="py-24 bg-[#FAFAFA] relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ type: 'spring', stiffness: 100, damping: 25 }}
             >
               <h2 className="text-4xl font-bold mb-6 text-[#2C3E50]">
                 Un equipo de ingenieros con una misión
@@ -181,9 +176,10 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ type: 'spring', stiffness: 100, damping: 25 }}
               className="relative"
             >
               <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
@@ -193,8 +189,8 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 backdrop-blur-md rounded-full flex items-center justify-center border border-primary/20">
-                 <img src={IMAGES.TEAM_AVATARS_20260207_061030_27} alt="Team avatars" className="w-24 h-auto" />
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 backdrop-blur-md rounded-full flex items-center justify-center border border-primary/20 overflow-hidden">
+                 <img src={IMAGES.VISUALES_MABLO_MABLO_SALUDO} alt="Mablo" className="w-24 h-auto object-contain" />
               </div>
             </motion.div>
           </div>
@@ -239,7 +235,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-white">
+      <section id="contact" className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto bg-[#FAFAFA] rounded-[3rem] overflow-hidden shadow-2xl border border-border/50 flex flex-col lg:flex-row">
             <div className="lg:w-1/2 p-12 lg:p-20 bg-secondary text-white relative">
@@ -354,3 +350,4 @@ export default function Home() {
     </div>
   );
 }
+

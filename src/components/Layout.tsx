@@ -4,6 +4,7 @@ import { Menu, X, Heart } from 'lucide-react';
 import { NAV_LINKS, scrollToSection } from '@/lib/index.ts';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { IMAGES } from '@/assets/images';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,12 +13,25 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      const sections = ['hero', 'services', 'about', 'contact'];
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight * 0.3;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i]);
+        if (el && el.offsetTop - viewportHeight <= scrollY) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
     };
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -29,93 +43,111 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
-      {/* Header */}
-      <header
+      {/* Navbar única mejorada */}
+      <motion.header
+        initial={{ y: 0 }}
+        animate={{ y: 0 }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
-          isScrolled 
-            ? "bg-background/80 backdrop-blur-xl border-border py-3 shadow-sm"
-            : "bg-transparent border-transparent py-6"
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b py-3 md:py-4",
+          isScrolled && "shadow-sm"
         )}
+        style={{ backgroundColor: '#ffffff', borderColor: 'rgba(0,0,0,0.08)' }}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo: icono pequeño + Mablo (estilo referencia) */}
           <a 
             href="#hero" 
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="text-2xl font-extrabold tracking-tighter text-foreground flex items-center gap-2 group"
+            className="flex items-center gap-2 group"
           >
-            <span className="bg-primary text-primary-foreground px-2 py-1 rounded-lg transition-transform group-hover:scale-110">
-              M
+            <img 
+              src={IMAGES.VISUALES_MABLO_MABLO_WORK} 
+              alt="Mablo" 
+              className="w-9 h-9 md:w-10 md:h-10 object-contain"
+            />
+            <span className="text-lg md:text-xl font-extrabold tracking-tight text-[#2C3E50]">
+              Mablo
             </span>
-            <span className="hidden sm:inline">Mablo</span>
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-            
-            {/* Mascot Landing Placeholder Area */}
-            <div className="w-16 h-16 ml-4 hidden lg:block" id="mablo-dock-target" aria-hidden="true" />
+          {/* Desktop Navigation: enlaces gris, botón naranja */}
+          <nav className="hidden md:flex items-center gap-6">
+            {NAV_LINKS.map((link) => {
+              const sectionId = link.href.replace('#', '');
+              const isActive = activeSection === sectionId;
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={cn(
+                    "text-sm font-medium transition-colors",
+                    isActive ? "text-primary" : "text-[#2C3E50]/80 hover:text-[#2C3E50]"
+                  )}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
             
             <Button 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6"
+              className="rounded-full px-6 font-semibold text-white hover:opacity-90"
+              style={{ backgroundColor: '#8B7BB8' }}
               onClick={() => scrollToSection('#contact')}
             >
-              Empezar ahora
+              Contactar
             </Button>
           </nav>
 
           {/* Mobile Toggle */}
           <button 
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2.5 rounded-xl text-foreground hover:bg-muted/50 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </header>
+      </motion.header>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-background pt-24 px-6 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl pt-24 px-6 md:hidden"
           >
-            <nav className="flex flex-col gap-6 items-center">
+            <motion.nav 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ staggerChildren: 0.05 }}
+              className="flex flex-col gap-3"
+            >
               {NAV_LINKS.map((link) => (
-                <a
+                <motion.a
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-2xl font-bold text-foreground hover:text-primary transition-colors"
+                  className="py-4 px-6 text-xl font-semibold text-foreground hover:text-primary hover:bg-muted/50 rounded-2xl transition-colors"
+                  whileTap={{ scale: 0.98 }}
                 >
                   {link.label}
-                </a>
+                </motion.a>
               ))}
               <Button 
-                className="w-full mt-4 bg-primary text-primary-foreground py-6 text-lg rounded-2xl"
+                className="w-full mt-6 py-6 text-lg rounded-2xl font-bold text-white"
+                style={{ backgroundColor: '#8B7BB8' }}
                 onClick={() => {
                   scrollToSection('#contact');
                   setIsMobileMenuOpen(false);
                 }}
               >
-                Empezar ahora
+                Contactar
               </Button>
-            </nav>
+            </motion.nav>
           </motion.div>
         )}
       </AnimatePresence>

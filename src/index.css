@@ -36,8 +36,8 @@
   /* Radius */
   --radius: 1rem;
 
-  /* Core UI Tokens */
-  --background: oklch(0.99 0.005 50);
+  /* Core UI Tokens - fondo claro tipo referencia */
+  --background: oklch(1 0 0);
   --foreground: oklch(0.28 0.03 250);
   --card: oklch(1.0 0 0);
   --card-foreground: oklch(0.28 0.03 250);
@@ -199,5 +199,10 @@
   }
   ::-webkit-scrollbar-thumb {
     @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
   }
 }

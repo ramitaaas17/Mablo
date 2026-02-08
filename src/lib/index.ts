@@ -31,7 +31,7 @@ export interface TeamMember {
 export const SERVICES_DATA: Service[] = [
   {
     id: 'web-dev',
-    title: 'Desarrollo Web',
+    title: 'Desarrollo Web y Apps',
     subtitle: 'Presencia Digital',
     description: 'Creamos sitios web dinámicos y estáticos que no solo se ven bien, sino que están construidos con ingeniería de primer nivel para escalar con tu negocio.',
     iconType: 'web',
@@ -39,7 +39,7 @@ export const SERVICES_DATA: Service[] = [
   },
   {
     id: 'data-migration',
-    title: 'Datos & Migración',
+    title: 'Bases de Datos y Migración',
     subtitle: 'De Excel a SQL',
     description: 'Transformamos tus hojas de cálculo desordenadas y manuales en bases de datos robustas y estructuradas, optimizando el acceso y la seguridad de tu información.',
     iconType: 'data',
@@ -47,7 +47,7 @@ export const SERVICES_DATA: Service[] = [
   },
   {
     id: 'process-optimization',
-    title: 'Optimización',
+    title: 'Optimización de Procesos',
     subtitle: 'Flujos de Trabajo',
     description: 'Analizamos y automatizamos tus procesos operativos para eliminar cuellos de botella, reduciendo el error humano y maximizando la productividad.',
     iconType: 'optimization',
