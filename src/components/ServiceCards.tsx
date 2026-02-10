@@ -14,14 +14,14 @@ const staggerContainer = {
 };
 
 const staggerItem = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       type: 'spring',
-      stiffness: 100,
-      damping: 15,
+      stiffness: 80,
+      damping: 28,
     },
   },
 };
@@ -39,8 +39,9 @@ export function ServiceCards() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-10"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ type: 'spring', stiffness: 80, damping: 28 }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10"
         >
           {SERVICES_DATA.map((service) => (
             <motion.div
@@ -55,9 +56,9 @@ export function ServiceCards() {
                 style={{ backgroundColor: '#ffffff', border: '2px solid rgba(139, 92, 246, 0.35)' }}
               />
               
-              <div className="relative p-8 md:p-10 flex flex-col items-center text-center">
+              <div className="relative p-6 sm:p-8 md:p-10 flex flex-col items-center text-center">
                 {/* Icono 3D */}
-                <div className="relative w-40 h-40 mb-6">
+                <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-4 md:mb-6">
                   <motion.div
                     animate={{
                       y: [0, -6, 0],
@@ -78,19 +79,17 @@ export function ServiceCards() {
                   </motion.div>
                 </div>
 
-                {/* Contenido: título en naranja (como referencia), descripción en gris */}
-                <div className="space-y-3">
-                  <h3 className="text-lg font-bold text-primary">
+                <div className="space-y-2 md:space-y-3">
+                  <h3 className="text-base sm:text-lg font-bold text-primary">
                     {service.title}
                   </h3>
-                  <p className="text-[#6b7280] leading-relaxed text-sm">
+                  <p className="text-[#6b7280] leading-relaxed text-xs sm:text-sm">
                     {service.description}
                   </p>
                 </div>
 
-                {/* Decorative Element */}
                 <div 
-                  className="mt-8 w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:w-full group-hover:rounded-xl"
+                  className="mt-6 md:mt-8 w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:w-full group-hover:rounded-xl"
                   style={{ 
                     backgroundColor: `color-mix(in oklch, ${service.accentColor} 10%, transparent)`,
                     color: service.accentColor
@@ -100,7 +99,7 @@ export function ServiceCards() {
                     className="flex items-center gap-2 font-bold text-sm overflow-hidden whitespace-nowrap"
                     initial={false}
                   >
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                     <span className="hidden group-hover:inline opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Saber más
                     </span>
@@ -121,11 +120,11 @@ export function ServiceCards() {
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="mt-20 flex flex-wrap justify-center items-center gap-8 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ type: 'spring', stiffness: 80, damping: 28, delay: 0.4 }}
+          className="mt-12 md:mt-20 flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
         >
-          <div className="flex items-center gap-2 font-mono text-xs">
+          <div className="flex items-center gap-2 font-mono text-[10px] sm:text-xs">
             <span className="w-2 h-2 rounded-full bg-primary" /> React / Next.js
           </div>
           <div className="flex items-center gap-2 font-mono text-xs">

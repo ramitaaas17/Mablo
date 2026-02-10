@@ -171,11 +171,21 @@
 
   html {
     @apply scroll-smooth antialiased;
+    scroll-snap-type: y mandatory;
   }
 
   body {
     @apply bg-background text-foreground font-sans min-h-screen;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Secciones que encajan al hacer scroll (no se mezclan) */
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    min-height: 100dvh;
+    scroll-margin-top: 5rem;
   }
 
   h1, h2, h3, h4, h5, h6 {
